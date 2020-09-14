@@ -5,7 +5,8 @@ import {createStore} from 'redux';
 import toDosReducer from './reducers/todos';
 import { addNewToDo } from './actions/todos';
 import { Provider } from 'react-redux';
-import ToDos from './components/ToDos'
+import ToDos from './components/ToDos';
+import ToDoList from './components/ToDoList';
 
 /**
  * Redux Store
@@ -35,6 +36,7 @@ store.dispatch(addNewToDo('Research Redux'));
 ReactDOM.render(
   <Provider store={store}>
     <ToDos />
+    <ToDoList />
   </Provider>,
   document.getElementById('root')
 );
