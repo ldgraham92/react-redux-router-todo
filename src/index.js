@@ -14,7 +14,7 @@ import ToDos from './components/ToDos'
  */
 const store = createStore(
   toDosReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // If you want to use REDUX Devtools in browser this line must exist too.
 );
 
 
