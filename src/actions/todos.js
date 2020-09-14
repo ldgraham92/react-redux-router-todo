@@ -16,5 +16,6 @@ const addNewToDo = toDoContent => {
 
     };
 }
-
+// If we want to use this in other files we must export it.
+// Curly braces let us add multiple exports when seperated by commas.
 export {addNewToDo};
