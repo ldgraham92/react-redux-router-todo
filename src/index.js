@@ -4,14 +4,19 @@ import './index.css';
 import {createStore} from 'redux';
 import toDosReducer from './reducers/todos';
 import { addNewToDo } from './actions/todos';
-
+import { Provider } from 'react-redux';
+import ToDos from './components/ToDos'
 
 /**
  * Redux Store
  * Store is our global state. This is where all of our global data exists.
  * We pass in the reducer so it will know how to handle any actions (requests).
  */
-const store = createStore(toDosReducer);
+const store = createStore(
+  toDosReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 
 // We can run instructions every time the state/store is updated by using the stores 'subscribe' method.
 // It takes a function to execute its argument, we are using it to console.log() our current state each time that it experiences a change.
@@ -25,11 +30,12 @@ store.subscribe(() => console.log(store.getState()));
 // Otherwise your reducer wont know what do do!
 store.dispatch(addNewToDo('Research Redux'));
 
-
+// When using Redux, we use the <Provider> combined with a "store" prop to pass our global...
+/// state info down to whereever we need it (Whichever component needs it)
 ReactDOM.render(
-  <React.StrictMode>
-    <></>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <ToDos />
+  </Provider>,
   document.getElementById('root')
 );
 
