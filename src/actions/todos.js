@@ -16,6 +16,16 @@ const addNewToDo = toDoContent => {
 
     };
 }
+
+// Another action: remove a to-do
+// This time we don't need content - the ToDo already exists!
+// We do need to target it somehow though... so an ID will do the trick.
+const removeToDo = id => {
+    return{
+        type: 'REMOVE_TO_DO',
+        payload: id
+    }
+}
 // If we want to use this in other files we must export it.
 // Curly braces let us add multiple exports when seperated by commas.
-export {addNewToDo};
+export {addNewToDo, removeToDo};
