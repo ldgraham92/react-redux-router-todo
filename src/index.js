@@ -35,6 +35,7 @@ store.dispatch(addNewToDo('Research Redux'));
 /// state info down to whereever we need it (Whichever component needs it)
 ReactDOM.render(
   <Provider store={store}>
+    <h1>React-Redux To Do List</h1>
     <ToDos />
     <ToDoList />
   </Provider>,

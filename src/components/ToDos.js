@@ -20,7 +20,7 @@ function ToDos( props ){
 
     return(
         <>
-            <h2>To-Do Form</h2>
+            <h2>Add To-Dos</h2>
             <form onSubmit={submitToDo}>
                 <label htmlFor='task'>Enter New Task:</label>
                 <input id='task' type='text' placeholder='Enter Task' value={newTask} onChange={event => {setNewTask(event.target.value);}}/>
